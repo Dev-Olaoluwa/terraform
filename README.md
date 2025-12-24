@@ -1,5 +1,5 @@
 
-## 📄 **README.md**
+##  **README.md**
 
 ````md
 # Terraform AWS Ubuntu Web Server
@@ -15,7 +15,7 @@ The goal is to demonstrate real-world Infrastructure as Code (IaC) practices usi
 
 ---
 
-## 📐 Architecture Overview
+##  Architecture Overview
 
 Terraform creates the following resources:
 
@@ -35,7 +35,7 @@ Terraform creates the following resources:
 
 ---
 
-## 🧑‍💻 Step 1 — Create a Terraform IAM User in AWS
+##  Step 1 — Create a Terraform IAM User in AWS
 
 1. Open the **AWS Console**
 2. Go to **IAM → Users → Create User**
@@ -47,7 +47,7 @@ Terraform creates the following resources:
 
 ---
 
-## 🔐 Step 2 — Configure AWS CLI
+##  Step 2 — Configure AWS CLI
 
 Install AWS CLI and run:
 
@@ -72,7 +72,7 @@ You should see your IAM user returned.
 
 ---
 
-## 🌍 Step 3 — Configure Terraform Cloud
+##  Step 3 — Configure Terraform Cloud
 
 1. Create an account at [https://app.terraform.io](https://app.terraform.io)
 2. Go to **User Settings → Tokens**
@@ -88,7 +88,7 @@ Terraform is now authenticated to Terraform Cloud.
 
 ---
 
-## 📄 Step 4 — main.tf Explained
+##  Step 4 — main.tf Explained
 
 The `main.tf` file defines the infrastructure.
 
@@ -176,7 +176,7 @@ These values allow integration with:
 
 ---
 
-## 🚀 Step 5 — Deploy Infrastructure
+##  Step 5 — Deploy Infrastructure
 
 Run:
 
@@ -205,7 +205,7 @@ Terraform will:
 
 ---
 
-## 🌐 Step 6 — Access the Web Server
+##  Step 6 — Access the Web Server
 
 After Terraform completes, copy the `instance_public_ip` and open:
 
@@ -221,7 +221,7 @@ Fadilulahi Olasunkanmi
 
 ---
 
-## 🧹 Destroy Resources
+##  Destroy Resources
 
 To clean up:
 
@@ -229,31 +229,6 @@ To clean up:
 terraform destroy --auto-approve
 ```
 
----
 
-## 🏆 Why This Matters
 
-This project demonstrates:
 
-* Secure cloud authentication
-* Infrastructure as Code
-* Automated server provisioning
-* Cloud networking
-* Production-grade Terraform workflow
-
-It is suitable for:
-
-* Cloud engineers
-* DevOps portfolios
-* Real-world infrastructure deployments
-
-```
-
----
-
-If you want, next I can:
-- Add diagrams
-- Add Terraform Cloud workspace instructions
-- Convert this into a reusable module
-- Or add CI/CD with GitHub Actions 🚀
-```
