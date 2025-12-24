@@ -1,8 +1,7 @@
 
 ##  **README.md**
 
-````md
-# Terraform AWS Ubuntu Web Server
+ Terraform AWS Ubuntu Web Server
 
 This project provisions an Ubuntu-based EC2 web server on AWS using Terraform.  
 It deploys a fully functional Apache web server running in the AWS **eu-north-1 (Stockholm)** region and outputs key infrastructure details such as VPC ID, subnet IDs, security group ID, and public IP address.
@@ -15,7 +14,7 @@ The goal is to demonstrate real-world Infrastructure as Code (IaC) practices usi
 
 ---
 
-##  Architecture Overview
+ Architecture Overview
 
 Terraform creates the following resources:
 
@@ -35,7 +34,7 @@ Terraform creates the following resources:
 
 ---
 
-##  Step 1 — Create a Terraform IAM User in AWS
+ Step 1 — Create a Terraform IAM User in AWS
 
 1. Open the **AWS Console**
 2. Go to **IAM → Users → Create User**
@@ -47,7 +46,7 @@ Terraform creates the following resources:
 
 ---
 
-##  Step 2 — Configure AWS CLI
+  Step 2 — Configure AWS CLI
 
 Install AWS CLI and run:
 
@@ -72,7 +71,7 @@ You should see your IAM user returned.
 
 ---
 
-##  Step 3 — Configure Terraform Cloud
+  Step 3 — Configure Terraform Cloud
 
 1. Create an account at [https://app.terraform.io](https://app.terraform.io)
 2. Go to **User Settings → Tokens**
@@ -88,13 +87,13 @@ Terraform is now authenticated to Terraform Cloud.
 
 ---
 
-##  Step 4 — main.tf Explained
+  Step 4 — main.tf Explained
 
 The `main.tf` file defines the infrastructure.
 
 It performs the following:
 
-### 1. AWS Provider
+1. AWS Provider
 
 ```hcl
 provider "aws" {
@@ -106,7 +105,7 @@ Tells Terraform to use AWS Stockholm region.
 
 ---
 
-### 2. Fetch Default VPC and Subnets
+ 2. Fetch Default VPC and Subnets
 
 ```hcl
 data "aws_vpc" "default" { default = true }
@@ -117,7 +116,7 @@ Reuses AWS’s default network instead of creating a new one.
 
 ---
 
-### 3. Create Security Group
+ 3. Create Security Group
 
 Allows:
 
@@ -128,7 +127,7 @@ This enables browser access and SSH login.
 
 ---
 
-### 4. Launch Ubuntu EC2 Instance
+ 4. Launch Ubuntu EC2 Instance
 
 Terraform provisions:
 
@@ -139,7 +138,7 @@ Terraform provisions:
 
 ---
 
-### 5. User Data (Boot Script)
+ 5. User Data (Boot Script)
 
 Terraform installs Apache automatically:
 
@@ -176,7 +175,7 @@ These values allow integration with:
 
 ---
 
-##  Step 5 — Deploy Infrastructure
+ Step 5 — Deploy Infrastructure
 
 Run:
 
@@ -204,8 +203,7 @@ Terraform will:
 4. Output networking details
 
 ---
-
-##  Step 6 — Access the Web Server
+  Step 6 — Access the Web Server
 
 After Terraform completes, copy the `instance_public_ip` and open:
 
@@ -228,6 +226,7 @@ To clean up:
 ```bash
 terraform destroy --auto-approve
 ```
+
 
 
 
